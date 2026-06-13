@@ -37,7 +37,7 @@ Variant (colour + size) synced to URL for deep-linking
 Slide-in cart drawer with quantity controls, removal, subtotal/grand total, free shipping threshold
 Quick Add to Cart with simulated async + random failure (bonus)
 Cart persists in localStorage across page refreshes
-Fully responsive — 4-col desktop grid, 2-col mobile, sideways thumbnail scroll on mobile detail
+Fully responsive 4-col desktop grid, 2-col mobile, sideways thumbnail scroll on mobile detail
 
 Project Structure
 
