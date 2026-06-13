@@ -8,7 +8,7 @@ Setup
 
 Requirements: Node 18+
 
-bashgit clone <your-repo-url>
+bashgit clone github.com/Gaurav1081/nua-store
 cd nua-store
 npm install
 npm run dev
