@@ -1,0 +1,288 @@
+@use '../styles/variables' as *;
+
+.page {
+  flex: 1;
+}
+
+//  Hero 
+
+.hero {
+  background: $color-text-primary;
+  color: #fff;
+  text-align: center;
+  padding: $space-16 $space-6;
+
+  @media (max-width: $bp-tablet) {
+    padding: $space-12 $space-6;
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-8 $space-4;
+  }
+}
+
+.heroTitle {
+  font-family: $font-display;
+  font-size: $text-4xl;
+  font-weight: $weight-bold;
+  letter-spacing: -0.02em;
+  margin-bottom: $space-3;
+
+  @media (max-width: $bp-tablet) {
+    font-size: $text-3xl;
+  }
+
+  @media (max-width: $bp-mobile) {
+    font-size: $text-2xl;
+  }
+}
+
+.heroSub {
+  font-size: $text-base;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: $weight-normal;
+
+  @media (max-width: $bp-mobile) {
+    font-size: $text-sm;
+  }
+}
+
+// Layout
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $space-8 $space-6 $space-16;
+
+  @media (max-width: $bp-tablet) {
+    padding: $space-6 $space-5 $space-12;
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-5 $space-4 $space-10;
+  }
+}
+
+// Toolbar
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  margin-bottom: $space-6;
+
+  @media (max-width: $bp-tablet) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $space-3;
+  }
+
+  @media (max-width: $bp-mobile) {
+    gap: $space-2;
+    margin-bottom: $space-4;
+  }
+}
+
+//  Category filters 
+
+.filters {
+  display: flex;
+  gap: $space-2;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-tablet) {
+    
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: $space-1;
+    // hide scrollbar visually
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  @media (max-width: $bp-mobile) {
+    gap: $space-1;
+  }
+}
+
+.filterBtn {
+  padding: $space-2 $space-4;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  color: $color-text-secondary;
+  background: $color-surface;
+  white-space: nowrap;
+  transition: all $transition-fast;
+  text-transform: capitalize;
+  flex-shrink: 0; 
+
+  &:hover {
+    border-color: $color-text-primary;
+    color: $color-text-primary;
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-1 $space-3;
+    font-size: 12px;
+  }
+}
+
+.filterBtnActive {
+  background: $color-text-primary;
+  border-color: $color-text-primary;
+  color: #fff;
+
+  &:hover {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+  }
+}
+
+//  Sort
+
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+
+  @media (max-width: $bp-tablet) {
+    // Align to the right edge when stacked
+    align-self: flex-end;
+  }
+
+  @media (max-width: $bp-mobile) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.sortLabel {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  white-space: nowrap;
+}
+
+.sort {
+  padding: $space-2 $space-8 $space-2 $space-3;
+  font-size: $text-sm;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  color: $color-text-primary;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6460' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $space-3 center;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover, &:focus {
+    border-color: $color-text-primary;
+    outline: none;
+  }
+
+  @media (max-width: $bp-mobile) {
+    flex: 1;
+  }
+}
+
+// Result count
+
+.resultCount {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  margin-bottom: $space-5;
+
+  @media (max-width: $bp-mobile) {
+    margin-bottom: $space-3;
+  }
+}
+
+// Product grid 
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-5;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-4;
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-3;
+  }
+}
+
+// Skeleton loader 
+
+.skeleton {
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-surface;
+}
+
+.skeletonImage {
+  aspect-ratio: 1;
+  background: linear-gradient(90deg, #f0ede8 25%, #e8e4de 50%, #f0ede8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeletonBody {
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-3;
+  }
+}
+
+.skeletonLine {
+  height: 12px;
+  background: linear-gradient(90deg, #f0ede8 25%, #e8e4de 50%, #f0ede8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: $radius-sm;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+// Error state 
+
+.error {
+  text-align: center;
+  padding: $space-16 $space-4;
+  color: $color-text-secondary;
+
+  p { margin-bottom: $space-4; }
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-10 $space-4;
+  }
+}
+
+.retryBtn {
+  padding: $space-3 $space-6;
+  background: $color-text-primary;
+  color: #fff;
+  border-radius: $radius-md;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  transition: background $transition-fast;
+
+  &:hover { background: $color-accent; }
+}
